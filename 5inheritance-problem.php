@@ -1,9 +1,5 @@
 <?php
 
-//jualan produk
-// buku
-// game
-
 
 // class 1
 class produk

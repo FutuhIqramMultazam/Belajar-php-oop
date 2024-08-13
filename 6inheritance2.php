@@ -1,14 +1,8 @@
 <?php
 
-//jualan produk
-// buku
-// game
-
-
 // class 1
 class produk
 {
-
     public $judul = "judul",
         $penulis = "penulis",
         $penerbit = "penerbit",
@@ -38,9 +32,6 @@ class produk
     }
 }
 
-
-
-
 // class buku extends produk
 class buku extends produk
 {
@@ -51,7 +42,6 @@ class buku extends produk
     }
 }
 // class buku extends produk
-
 
 
 // class buku extends produk
@@ -66,18 +56,8 @@ class game extends produk
 // class buku extends produk
 
 
-// class 2
-class cetakInfoProduk
-{
-    public function cetak(produk $produk)
-    {
-        $str = "{$produk->judul} | {$produk->getLable()} (Rp.{$produk->harga}) ";
-        return $str;
-    }
-}
-
 $produk3 = new buku("Sifat Shalat Nabi", "Ustadz Yazid", "Pustaka Imam", "80.000", 100, 0);
-$produk4 = new game("GTA V", "Franklin", "Sony", "500.000", 0, "1jam");
+$produk4 = new game("GTA V", "Franklin", "Sony", "500.000", 0, 1);
 
 echo $produk3->getInfoProduk();
 echo "<br>";
