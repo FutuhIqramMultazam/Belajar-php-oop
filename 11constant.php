@@ -1,27 +1,29 @@
 <?php
 
-// define('NAMA', 'icam');
-// echo NAMA;
+// cara ke 1
+define('NAMA', 'icam');
+echo NAMA;
 
-// echo "<br>";
+echo "<br>";
 
-// const UMUR =  20;
-// echo UMUR;
+// cara ke 2
+const UMUR =  20;
+echo UMUR;
 
-// class coba
-// {
-//     const NAMA = "icam";
-// }
+class coba
+{
+    const NAMA = "icam";
+}
 
-// echo coba::NAMA;
+echo coba::NAMA;
 
-// echo __FILE__;
+echo __FILE__;
 
-// function tes()
-// {
-//     echo __FUNCTION__;
-// }
-// tes();
+function tes()
+{
+    echo __FUNCTION__;
+}
+tes();
 
 class tesMagic
 {

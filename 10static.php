@@ -11,8 +11,11 @@ class ContohStatic
     }
 }
 
-echo ContohStatic::$angka;
+
+echo ContohStatic::$angka; /* kalo static dia langsung panggil property nya */
 echo "<br>";
 echo ContohStatic::halo();
 echo "<hr>";
 echo ContohStatic::halo();
+
+/* terlihat lebih mudah dan singkat */

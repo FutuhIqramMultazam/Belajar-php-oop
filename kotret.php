@@ -1,61 +1,81 @@
 <?php
 
-// bikin class 
-class listName
+class karyawan
 {
-    // bikin property 
-    public $nama,
-        $usia,
-        $jk,
-        $hobi;
-    // method constracter 
-    public function __construct($nama, $usia, $jk, $hobi)
+    private $nama, $idKaryawan;
+
+    public function __construct($nama, $idKaryawan)
     {
 
         $this->nama = $nama;
-        $this->usia = $usia;
-        $this->jk = $jk;
-        $this->hobi = $hobi;
+        $this->idKaryawan = $idKaryawan;
     }
 
-    public function displayInfo()
+    public function setNama($nama)
     {
-        echo "Nama : {$this->nama} <br>";
-        echo "Usia : {$this->usia} <br>";
-        echo "Jenis kelamin : {$this->jk} <br>";
-        echo "Hobi : {$this->hobi} <br>";
+
+        $this->nama = $nama;
+    }
+
+    public function getNama()
+    {
+
+        return $this->nama;
+    }
+
+    public function setIdKaryawan($idKaryawan)
+    {
+        $this->idKaryawan = $idKaryawan;
+    }
+
+    public function getIdKaryawan()
+    {
+        return $this->idKaryawan;
+    }
+
+
+    public function tampilkanInfo()
+    {
+        $str = "nama karyawan : {$this->nama} <br> nomor Id : {$this->idKaryawan} ";
+        return $str;
     }
 }
 
 
-// bikin class extedns
-class ekstrim extends listName
+class manager extends karyawan
 {
+    private $departemen;
 
-    public $exstrim;
-    public function __construct($nama, $usia, $jk, $hobi, $exstrim)
+    public function __construct($nama, $idKaryawan, $departemen)
     {
-        parent::__construct($nama, $usia, $jk, $hobi,);
-        $this->exstrim = $exstrim;
+
+        parent::__construct($nama, $idKaryawan);
+        $this->departemen = $departemen;
     }
 
-    public function displayInfo()
+    public function setDepartemen($departemen)
     {
-        // studi kasus hobi seseoarang
-        parent::displayInfo();
-        echo "ternyata hobinya ekstrim ah harus {$this->exstrim} <br>";
+
+        $this->departemen = $departemen;
+    }
+
+    public function getDepartemen()
+    {
+        return $this->departemen;
+    }
+
+    public function tampilkanInfo()
+    {
+
+        $str = parent::tampilkanInfo() . "<br> departemen : {$this->departemen}";
+        return $str;
     }
 }
 
 
-// instansi
-$list1 = new listName("futuh", 20, "pria", "basket");
-$list2 = new ekstrim("icam", 19, "pria", "ngoding", "mikir");
+$karyawan1 = new karyawan("Futuh", "2307014");
+echo $karyawan1->tampilkanInfo();
+echo "<hr>";
 
-
-// cetak menggunakan method
-$list1->displayInfo();
-echo "<br>";
-$list2->displayInfo();
-
-// selesai
+$manager1 = new manager("Icam", "050803", "PT Cibudug nusantara");
+echo $manager1->tampilkanInfo();

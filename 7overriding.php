@@ -64,7 +64,7 @@ class game extends produk
 
     public function getInfoProduk()
     {
-        $str = "Game : {$this->judul} | {$this->getLable()} (Rp. {$this->harga}) ~ {$this->waktuMain} Jam. ";
+        $str = "Game :" . parent::getInfoProduk() . " ~ {$this->waktuMain} Jam. ";
         return $str;
     }
 }
